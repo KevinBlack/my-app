@@ -17,6 +17,16 @@ export default {
   components: {
     HelloWorld
   },
+  beforeRouteEnter (to, from, next) {
+    next( vm =>{
+      console.log(vm);
+    })
+  },
+  beforeRouteLeave(to, from, next) {
+    const leave = confirm('您确定要离开吗？')
+    if(leave) next()// 确认离开的话，执行后续函数
+    else next(false)// 传入false则页面不会跳转
+  },
   methods:{
      handleClick (type) {
        if (type === 'back') this.$router.back()

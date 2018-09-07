@@ -11,7 +11,10 @@ export default[
       if (from.name === 'about') alert('I come from about')
       else alert('I don`t come from about')
       next()// 结尾一定要执行next，否则不会跳转！
-    })
+    }),
+    meta: {
+      title: '首页'
+    }
   },
   {
     path: 'login',
