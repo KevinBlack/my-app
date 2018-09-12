@@ -14,5 +14,5 @@ module.exports = {
     productionSourceMap: false,   // 打包时不生成.map文件，会减小体积
     devServer: {
         proxy: 'http://localhost:4000'
-    } // 通过代理解决跨域问题，如上，任何没有匹配到静态页面的访问都会代理到4000这里
+    } // 通过代理解决跨域问题，如上，任何没有匹配到静态页面的访问都会代理到4000这里，例如axios.post('/user/info')这种请求经过代理设置后就会拼成'http://localhost:4000/user/info'
 }
